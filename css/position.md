@@ -1,7 +1,7 @@
 # 作用
 - 用于指定一个元素在文档中的定位方式，通过left、right、top和bottom决定了元素的最终位置
 
-# 用法
+# 属性值
 1. static
   - 正常布局行为，top等方向和z-index属性设置无效
 2. relative
