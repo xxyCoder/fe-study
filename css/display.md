@@ -28,7 +28,7 @@
 3. position = absolute | fixed
 4. display: inline-block | flex
 
-## 作用
+## 应用场景
 1. 防止父元素塌陷
 2. 避免margin重叠
 3. 实现两栏或多栏自适应布局
