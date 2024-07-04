@@ -3,6 +3,6 @@
 
 const createServer = require('../index.js')
 
-createServer().listen(3750, () => {
-  console.log('server start 3750 port', "http://localhost:3750")
+createServer().listen(5173, () => {
+  console.log('server start 5173 port', "http://localhost:5173")
 })
