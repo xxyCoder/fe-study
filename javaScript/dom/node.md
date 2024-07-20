@@ -30,3 +30,49 @@
 17. isEqualNode()返回布尔值，用于检查两个节点是否相等（类型、属性和子节点相同）
 18. isSameNode()返回布尔值，表示两节点是否为同一个节点
 19. normalize()用于清理当前节点所有文本节点，即将相邻文本节点合并为一个文本节点
+
+
+# NodeList
+- 类数组对象，成员是Node
+- 可以通过Node.childNodes()和document.querySelectorAll()获得
+  - childNodes返回动态集合，其余都返回静态集合
+
+## 用法
+1. length
+2. forEach()
+3. keys()、values()、entries()
+
+
+# HTMLCollection
+- 类数组对象，只包含element节点，均为动态集合
+- 通过document.links、document.forms等获得
+
+## 用法
+1. length
+2. namedItem(str)
+  - 接受以id属性或者name属性的值，返回当前集合中对应元素节点，如果没有则返回null
+
+
+# ParentNode
+- 如果当前节点是父节点，则继承了ParentNode接口
+
+## 用法
+1. children
+  - 返回HTMLCollection实例
+2. firstElementChild、lastElementChild
+3. childElementCount
+  - 返回元素子节点的个数
+4. append()、prepend()
+  - 为当前节点的子节点末尾/首部追加一个或多个子节点（元素或文本）
+
+
+# ChildNode
+- 一个节点有父节点，那么就继承了ChildNode接口
+
+## 用法
+1. remove()
+  - 从父节点移除自己
+2. before()、after()
+  - 在当前节点前面/后面插入一个或多个节点（元素或文本）
+3. replaceWith()
+  - 替换当前节点
