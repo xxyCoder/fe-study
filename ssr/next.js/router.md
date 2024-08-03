@@ -29,3 +29,23 @@
 2. app目录下的not-found文件可替换默认not-found的UI，其由路由路径不匹配或者组件抛出notFound函数触发
   - notFound函数由最近的not-found文件捕获处理
 3. app目录下的其他子目录的not-found只能由notFound函数触发
+
+
+# 动态路由
+1. [foldername]作为文件名，foldername会作为params传递给布局、页面、路由处理程序和generatorMetadata函数
+2. [...foldername]表示捕获后面所有的路由片段
+3. [[...foldername]]表示可选的捕获后面所有路由片段
+
+# 路由组
+- (foldername)作为文件名，可以阻止文件夹名称被映射到url中
+
+# 平行路由
+- 文件名以@开头，允许在同一个布局下渲染多个页面（类似插槽），其文件名作为prop传递给共享的父布局
+- 如果是页面导航插槽的内容显示是正确的，因为next默认会追踪每个插槽的状态，如果是刷新，next无法确定与当前url不匹配的插槽状态，故渲染404错误，解决方案是使用default.{js,ts,jsx,tsx}
+
+# 拦截路由
+- 拦截路由会拦截在当前路由下访问某个路由所展示的页面
+1. (.)foldername表示同一级的foldername
+2. (..)foldername表示上一级的foldername
+3. (..)(..)foldername表示上上级foldername
+4. (...)foldername表示根目录的foldername

@@ -8,3 +8,11 @@
   - replace属性指定是否替换
   - prefetch为true表示在后台预获取页面
   - 其他props自动转换给底层a标签
+
+## useRouter
+- 客户端的hook，有push和replace方法
+  - {push,replace}(url, opts?)
+  - refresh() 刷新路由
+  - prefetch()  预获取，加快客户端导航
+  - back()
+  - forward()
