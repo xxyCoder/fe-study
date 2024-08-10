@@ -39,3 +39,21 @@
   - 只读
 15. offsetLeft、offsetTop
   - 距离offsetParent的距离
+16. children
+  - 返回类数组对象，包括当前元素的所有子元素
+17. firstElementChild、lastElementChild
+  - 返回第一个/最后一个元素子节点
+18. nextElementSibling、previousElementSibling
+  - 返回当前元素的前一个/后一个元素
+19. closest()
+  - 接受一个css选择器作为参数，返回匹配该选择器、最接近当前节点的一个祖先节点，没有则返回null
+20. matches()
+  - 返回一个布尔值，表示当前元素是否匹配给定的css选择器
+21. scrollIntoView()
+  - 滚动当前元素进入浏览器的可视区域，接受布尔参数，true表示元素顶部与当前可见区域对其，false表示元素底部与当前可见区域底部对其
+22. getBoundingClientRect()
+  - 返回当前位置最顶层的元素信息，提供当前元素节点的大小、位置等信息
+23. getBoundingClientRects()
+  - 同上，返回一个类数组对象
+24. insertAdjacentElement()
+  - 在当前元素位置的前面插入一个新节点，插入失败返回null
