@@ -2,7 +2,7 @@
 - next的路由基于文件系统，一个文件就可以是一个路由
 
 ## page router
-1. 在pages目录下创建的文件（js、ts、jsx、tsx）都被视为目录
+1. 在pages目录下创建的文件（js、ts、jsx、tsx）都被视为路由，导致无法写组件
 
 ## app router
 1. v13开始的新路由模式，可与pages router共存，但app router优先级更高
@@ -29,6 +29,13 @@
 2. app目录下的not-found文件可替换默认not-found的UI，其由路由路径不匹配或者组件抛出notFound函数触发
   - notFound函数由最近的not-found文件捕获处理
 3. app目录下的其他子目录的not-found只能由notFound函数触发
+
+### 路由处理程序
+1. 文件定义在app目录下，以route作为文件名，与page不能在同一层级
+2. route文件中存放大写的HTTP方法，对于不支持的方法返回405
+3. 函数接受两参数，一个request，一个context
+  - request是NextRequest对象，扩展request
+  - context只有一个值params，为当前路由的动态参数对象
 
 
 # 动态路由
