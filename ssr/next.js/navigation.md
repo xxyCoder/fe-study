@@ -16,3 +16,6 @@
   - prefetch()  预获取，加快客户端导航
   - back()
   - forward()
+
+## redirect
+- 客户端组件，重定向到页面

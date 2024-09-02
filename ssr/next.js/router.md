@@ -20,6 +20,7 @@
 ### app error
 1. 路由文件夹下创建error.{js,ts,jsx,tsx}，用来展示发生错误时的UI，其借助了React的Error Boundary功能，将page文件或者<Suspense>使用<ErrorBoundary>包裹，fallback指定为error文件
 2. 同级的page和template无法捕获，需要父级的error处理，而根布局和根页面则需要global-error文件处理，该文件也需要定义html和body标签
+3. error函数接受一个reset函数，调用后帮助尝试从错误中恢复（触发重新渲染错误边界内的内容）
 
 ### app loading
 1. 路由文件夹下创建loading.{js,ts,jsx,tsx}，借助React的Suspense实现，将page文件用<Suspense>包裹，fallback指定为loading文件
@@ -39,15 +40,21 @@
 
 
 # 动态路由
-1. [foldername]作为文件名，foldername会作为params传递给布局、页面、路由处理程序和generatorMetadata函数
-2. [...foldername]表示捕获后面所有的路由片段
+1. [foldername]作为文件名，foldername会作为params传递给布局、页面（没有模板）、路由处理程序和generatorMetadata函数
+2. [...foldername]表示捕获后面所有的路由片段，值为数组
 3. [[...foldername]]表示可选的捕获后面所有路由片段
 
 # 路由组
 - (foldername)作为文件名，可以阻止文件夹名称被映射到url中
+1. 按逻辑分组
+2. 创建同一层级下不同的布局
+  - 创建多个根布局，但需要删除根布局
 
 # 平行路由
 - 文件名以@开头，允许在同一个布局下渲染多个页面（类似插槽），其文件名作为prop传递给共享的父布局
+1. 条件渲染
+2. 可做独立路由处理loading、error等
+  - 平行路由和路由组一样，不会影响路由的url，其下也可以添加子目录（子路由）
 - 如果是页面导航插槽的内容显示是正确的，因为next默认会追踪每个插槽的状态，如果是刷新，next无法确定与当前url不匹配的插槽状态，故渲染404错误，解决方案是使用default.{js,ts,jsx,tsx}
 
 # 拦截路由
